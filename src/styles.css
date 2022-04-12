@@ -1,0 +1,10 @@
+body {
+  font-family: sans-serif;
+}
+
+.done {
+  color : green;
+}
+.todo {
+  color : red;
+}
