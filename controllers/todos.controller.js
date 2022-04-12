@@ -10,8 +10,8 @@ class TodosController {
       case "click":
         this.clickHandler(e.target);
         break;
-      case "load":
-        this.loadHandler();
+      /* case "load":
+        this.loadHandler(); */
       case "change":
         this.changeHandler(e.target)
       default:
@@ -19,19 +19,14 @@ class TodosController {
     }
   }
 
-  get modelHeading() {
-    return this.model.heading;
-  }
-
   clickHandler(target) {
-    console.log(target)
     this.model.selection = target.value;
     this.model.filterTodosByUserAndStatus();
     this.model.notify(this.model);
   }
    loadHandler() {
      this.model.selection = this.selectedItem ?? 'all'
-   this.model.loadTodos()
+    this.model.loadTodos()
   }
   changeHandler(target){
     if(target.name === 'users'){

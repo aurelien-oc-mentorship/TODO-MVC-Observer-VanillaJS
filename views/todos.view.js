@@ -12,7 +12,7 @@ class TodosView extends Observer {
 
     //DOM EventsListeners
     this.selectors.forEach(selector => selector.addEventListener("click", controller));
-    window.addEventListener('load', controller)
+    window.addEventListener('load', () => { controller.loadHandler()})
     this.users.addEventListener('change', controller)
 
     //Adding Observers
@@ -21,7 +21,7 @@ class TodosView extends Observer {
   }
 
   update(model) {
-    this.todos.innerHTML = this.displayTodos(model.filtredTodos, model.currentUser);
+    this.todos.innerHTML = this.displayTodos(model.filtredTodos);
     this.users.innerHTML = this.displayUsers(model.users, model.currentUser)
   }
 

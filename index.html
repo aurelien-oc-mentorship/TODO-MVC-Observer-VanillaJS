@@ -4,10 +4,6 @@
     <meta name="viewport" content="width=device-width" />
     <title>MVC Experiment</title>
     <link rel="stylesheet" href="./src/styles.css">
-    <script type="module" src="./src/index.js"></script>
-    <script type="module" src="./controllers/todos.controller.js"></script>
-    <script type="module" src="./models/todos.model.js"></script>
-    <script type="module" src="./views/todos.view.js"></script>
   </head>
 
   <body>
@@ -19,17 +15,19 @@
       <input type="radio" name="status" value="todo" id="todo"><label for="todo">todo</label>
       </fieldset>
       <fieldset>
-        <label for="user">User</label>
+        <label for="users">User</label>
         <select id="users" name="users">
           <option value="all">all</option>
         </select>
       </fieldset>
-
     </form>
     <section id="todo-container">
       <ul id="todo-list">
-
       </ul>
     </section>
+    <script type="module" src="./src/index.js"></script>
+    <script type="module" src="./controllers/todos.controller.js"></script>
+    <script type="module" src="./models/todos.model.js"></script>
+    <script type="module" src="./views/todos.view.js"></script>
   </body>
 </html>

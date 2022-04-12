@@ -11,7 +11,6 @@ class TodosModel extends Observable {
   }
 
   filterTodosByStatus() {
-      console.log(this.selection)
     switch (this.selection) {
       case "all": this.filtredTodos = [...this.todos];break;
       case "completed": this.filtredTodos = [...this.todos.filter(todo => todo.completed)];break;
@@ -24,13 +23,12 @@ class TodosModel extends Observable {
         .then(todos => {
           this.users = [... new Set(todos.map(todo => todo.userId))]
           this.todos = [...todos];
-          this.filterTodosByStatus()
-            this.notify(this)
+          this.filterTodosByStatus();
+          this.notify(this)
         })
   }
   filterTodosByUserAndStatus(){
       this.filterTodosByStatus();
-      console.log(this.currentUser)
       if(this.currentUser !== 'all'){
           this.filtredTodos = this.filtredTodos.filter(todo => todo.userId == this.currentUser)
       }
